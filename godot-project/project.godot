@@ -19,6 +19,10 @@ config/name="CEvsEstudiantes"
 run/main_scene="res://Scene.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/fullscreen=true
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
