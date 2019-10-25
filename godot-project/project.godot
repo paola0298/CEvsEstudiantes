@@ -16,12 +16,8 @@ _global_script_class_icons={
 [application]
 
 config/name="CEvsEstudiantes"
-run/main_scene="res://Scene.tscn"
+run/main_scene="res://Root.tscn"
 config/icon="res://icon.png"
-
-[display]
-
-window/size/fullscreen=true
 
 [rendering]
 
