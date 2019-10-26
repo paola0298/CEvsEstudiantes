@@ -20,7 +20,7 @@ void NewGameI::_process(float delta) { }
 
 void NewGameI::doAction() {
     Input *i = Input::get_singleton();
-    get_tree()->change_scene(String("res//Scene.tscn"));
+    get_tree()->change_scene(String("scenes/Scene.tscn"));
 }
 
 void NewGameI::_ready() {
@@ -37,13 +37,13 @@ void NewGameI::_ready() {
 void NewGameI::_on_Individual_pressed() {
     String message = "New individual game";
     Godot::print(message);
-    get_tree()->change_scene(String("Scene.tscn"));
+    get_tree()->change_scene(String("scenes/Scene.tscn"));
 }
 
 void NewGameI::_on_Collective_pressed() {
     String message = "New Collective game";
     Godot::print(message);
-    get_tree()->change_scene(String("Scene.tscn"));
+    get_tree()->change_scene(String("scenes/Scene.tscn"));
 }
 
 

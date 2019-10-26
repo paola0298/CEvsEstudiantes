@@ -7,7 +7,6 @@
 [ext_resource path="res://img/label_exit.png" type="Texture" id=5]
 [ext_resource path="res://img/characters1.png" type="Texture" id=6]
 
-
 [node name="Root" type="Node2D"]
 script = ExtResource( 1 )
 
