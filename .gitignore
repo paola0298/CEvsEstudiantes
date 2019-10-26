@@ -1,5 +1,5 @@
 *.so
 *.os
-.sconsign.dblite
+*.dblite
 
 .vscode/
