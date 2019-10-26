@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/label_individual.png-234424d6ced39eb78006f08b492aa2f8.stex"
+path="res://.import/label_colectiva.png-064c8fde1cf7cbe391220f475da2edc7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://label_individual.png"
-dest_files=[ "res://.import/label_individual.png-234424d6ced39eb78006f08b492aa2f8.stex" ]
+source_file="res://img/label_colectiva.png"
+dest_files=[ "res://.import/label_colectiva.png-064c8fde1cf7cbe391220f475da2edc7.stex" ]
 
 [params]
 
