@@ -13,14 +13,17 @@ namespace godot {
 
         private:
             Vector2 motion;
-
         public:
             Player();
             ~Player();
             int SPEED;
             void _init();
-            void _process();
+            void _process(float delta);
             static void _register_methods();
+            void UpdateMotionFromInput(float delta);
+
+            Vector2 cartesian_to_isometric(Vector2 cartesian);
+            Vector2 isometric_to_cartesian(Vector2 isometric);
     };
 
 }
