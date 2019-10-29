@@ -21,9 +21,10 @@ library = SubResource( 1 )
 script = SubResource( 2 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-margin_top = -1.0
-margin_right = 1861.0
-margin_bottom = 877.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1366.0
+margin_bottom = 768.0
 custom_constants/margin_right = 120
 custom_constants/margin_top = 80
 custom_constants/margin_left = 120
@@ -32,62 +33,68 @@ custom_constants/margin_bottom = 80
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 margin_left = 120.0
 margin_top = 80.0
-margin_right = 1805.0
-margin_bottom = 836.0
+margin_right = 1246.0
+margin_bottom = 688.0
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
-margin_right = 1685.0
-margin_bottom = 343.0
+margin_right = 1126.0
+margin_bottom = 230.0
 
 [node name="Logo" type="TextureRect" parent="MarginContainer/VBoxContainer/CenterContainer"]
-margin_right = 1685.0
-margin_bottom = 343.0
+margin_left = 13.0
+margin_right = 1113.0
+margin_bottom = 230.0
+rect_min_size = Vector2( 1100, 230 )
 texture = ExtResource( 1 )
+expand = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 347.0
-margin_right = 1685.0
-margin_bottom = 756.0
+margin_top = 234.0
+margin_right = 1126.0
+margin_bottom = 608.0
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_right = 661.0
-margin_bottom = 409.0
+margin_bottom = 374.0
 
 [node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_right = 661.0
-margin_bottom = 409.0
+margin_bottom = 374.0
 size_flags_vertical = 3
 custom_constants/separation = 30
 alignment = 1
 
 [node name="Individual" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MenuOptions"]
-margin_top = 71.0
+margin_top = 53.0
 margin_right = 661.0
-margin_bottom = 140.0
+margin_bottom = 122.0
 icon = ExtResource( 2 )
 
 [node name="Colectiva" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MenuOptions"]
-margin_top = 170.0
+margin_top = 152.0
 margin_right = 661.0
-margin_bottom = 239.0
+margin_bottom = 221.0
 icon = ExtResource( 3 )
 
 [node name="Salir" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MenuOptions"]
-margin_top = 269.0
+margin_top = 251.0
 margin_right = 661.0
-margin_bottom = 338.0
+margin_bottom = 320.0
 icon = ExtResource( 4 )
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 665.0
-margin_right = 1685.0
-margin_bottom = 409.0
+margin_right = 1126.0
+margin_bottom = 374.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Characters" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/CenterContainer"]
-margin_left = 290.0
-margin_right = 729.0
-margin_bottom = 409.0
+margin_left = 50.0
+margin_top = 12.0
+margin_right = 410.0
+margin_bottom = 362.0
+rect_min_size = Vector2( 360, 350 )
 texture = ExtResource( 5 )
+expand = true
