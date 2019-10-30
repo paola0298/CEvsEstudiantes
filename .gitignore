@@ -2,5 +2,6 @@
 *.os
 *.dblite
 
+libsx11/
 .vscode/
 others/
