@@ -2,6 +2,11 @@
 
 #include <core/Godot.hpp>
 #include <Node2D.hpp>
+#include <SceneTree.hpp>
+#include <ResourceLoader.hpp>
+#include <Engine.hpp>
+#include <ClassDB.hpp>
+#include <ProjectSettings.hpp>
 
 namespace godot {
 
@@ -12,7 +17,7 @@ namespace godot {
             MainMenu();
             ~MainMenu();
 
-            static void _register_mehthods();
+            static void _register_methods();
             void _init();
             void _on_Individual_pressed();
             void _on_Collective_pressed();
