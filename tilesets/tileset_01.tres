@@ -12,7 +12,6 @@ points = PoolVector2Array( 777.781, 635.25, 682.781, 685.25, 630.781, 656.25, 38
 
 [sub_resource type="StreamTexture" id=2]
 flags = 4
-load_path = "res://.import/new_building.png-20482c34341d68fbc4f465f04d6b7e92.stex"
 
 [resource]
 0/name = "cityTiles_080.png 0"
