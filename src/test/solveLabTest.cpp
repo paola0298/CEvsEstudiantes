@@ -3,15 +3,6 @@
 
 using namespace std;
 
-void Laberinto::cargarLaberinto(int filas, int columnas, int xStart) {
-    // (*this).laberinto.assign(filas, vector<int>(columnas));
-    // for (int i = 0; i < filas; i++) {
-    //     for (int j = 0; j < columnas; j++) {
-
-
-    //     }
-    // }
-}
 
 void Laberinto::printLab() const{
     for(unsigned int i=0; i < (*this).laberinto.size(); i++){
@@ -64,7 +55,7 @@ void Laberinto::resolverLaberinto() {
 
     vector<int> ultimoPath;
     while(!(*this).path.empty() && (*this).laberinto[(*this).path[(*this).path.size()-1][0]][(*this).path[(*this).path.size()-1][1]] != 3){
-        // std::cout << "In while.." << "\n";
+        std::cout << "In while.." << "\n";
         // std::cout << (*this).laberinto[(*this).path[(*this).path.size()-1][0]][(*this).path[(*this).path.size()-1][1]] << "\n";
         ultimoPath.clear();
         ultimoPath.push_back((*this).path[(*this).path.size()-1][0]);
@@ -122,11 +113,24 @@ Laberinto::Laberinto() {}
 
 int main()
 {
-    Laberinto *lab = new Laberinto();
-    lab->printLab();
-    // std::cout << "Lab printed\n";
-    lab->resolverLaberinto();
-    // std::cout << "Lab resolved\n";
-    lab->printLabResuelto();
+    // Laberinto *lab = new Laberinto();
+    // lab->printLab();
+    // // std::cout << "Lab printed\n";
+    // lab->resolverLaberinto();
+    // // std::cout << "Lab resolved\n";
+    // lab->printLabResuelto();
+    std::vector<std::vector<int> > path;
+    std::vector<int> vec;
+    vec.push_back(1);
+    vec.push_back(2);
+    std::cout << vec[1] << "\n";
+
+    std::cout << vec.size() << "\n";
+    vec.pop_back();
+    vec.size();
+    std::cout << vec.size() << "\n";
+    std::cout << path.size() << "\n";
+    path.push_back(vec);
+    std::cout << path.size() << "\n";
     return 0;
 }
