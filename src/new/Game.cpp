@@ -23,6 +23,23 @@ void Game::_ready() {
     else 
         Godot::print(String("Collective game"));
 
+    //test path generator
+
+    std::vector<std::vector<int> > matrix{{ 0, 1, 1, 1, 1, 1, 1, 0, 0, 0}, 
+                                          { 0, 1, 1, 1, 0, 0, 0, 0, 0, 0}, 
+                                          { 0, 0, 1, 1, 1, 1, 1, 0, 0, 0},
+                                          { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+                                          { 0, 1, 1, 0, 0, 1, 1, 0, 1, 0},
+                                          { 0, 0, 1, 1, 1, 1, 0, 0, 0, 0},
+                                          { 0, 1, 0, 0, 0, 1, 1, 1, 1, 0},
+                                          { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
+                                          { 0, 0, 0, 0, 0, 0, 0, 0, 1, 1}, 
+                                          { 0, 0, 0, 0, 0, 0, 0, 0, 0, 3} };
+    PathGenerator path(matrix);
+    path.printLab();
+    Godot::print("Matrix printed");
+    path._generate_path();
+    // path.printLabResuelto();
 }
 
 void Game::_process(float delta) { }

@@ -106,3 +106,24 @@ std::vector<int> PathGenerator::findEnter() const {
             }
     return pos;
 }
+
+void PathGenerator::printLab() const{
+    for(unsigned int i=0; i < (*this).matrix.size(); i++){
+        for(unsigned int j=0; j < (*this).matrix[i].size(); j++)
+            Godot::print(String((*this).matrix[i][j]));
+            // cout << (*this).matrix[i][j];
+        // cout << endl;
+    }
+}
+
+void PathGenerator::printLabResuelto() const{
+    if(!(*this).path.empty()){
+        //Añadir el camino al laberinto
+        Godot::print(String("Path find"));
+        // cout << "LABERINTO RESUELTO: "<< endl;
+        printLab();
+    }
+    else
+        Godot::print(String("No hay camino"));
+        // cout << "El laberinto no tiene salida" << endl;
+}

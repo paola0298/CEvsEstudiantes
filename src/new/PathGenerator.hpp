@@ -15,6 +15,8 @@ namespace godot {
             void _init();
             void _generate_path();
             std::vector<std::vector<int>> _get_Path();
+            void printLab() const;
+            void printLabResuelto() const;
         
         private:
             std::vector<std::vector<int>> path;

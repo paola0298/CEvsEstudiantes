@@ -5,6 +5,7 @@
 #include <PackedScene.hpp>
 #include <SceneTree.hpp>
 #include <ResourceLoader.hpp>
+#include "PathGenerator.hpp"
 
 namespace godot {
     class Game : public Node2D {
