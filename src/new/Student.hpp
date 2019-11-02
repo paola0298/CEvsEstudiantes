@@ -3,6 +3,7 @@
 #include <core/Godot.hpp>
 #include <KinematicBody2D.hpp>
 #include <string>
+#include <PoolArrays.hpp>
 
 namespace godot {
 
@@ -18,7 +19,7 @@ namespace godot {
         private:
             float life;
             float base_life;
-            float speed;
+        
             float archerResistance;
             float resistanceToWizards;
             float gunnerResistance;
@@ -28,10 +29,16 @@ namespace godot {
             double fitness_score;
             float chromosome[6] = {0.0};
 
+
         public: 
             Student();
             Student(float life, float speed, float a_r, float m_r, float g_r, float fm_r, int type);
             ~Student();
+
+            PoolVector2Array path;
+
+            void set_path(PoolVector2Array path);
+            void move_along_path(float distance);
 
             //Godot methods
             void _init();
@@ -58,5 +65,6 @@ namespace godot {
             void set_fitness_score(float score);
             float get_fitness_score();
             float * get_chromosome();
+            int speed = 400;
     };
 }

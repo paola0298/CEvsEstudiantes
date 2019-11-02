@@ -20,9 +20,10 @@ void MainMenu::_on_Individual_pressed() {
     //  bool responde = get_node("/root/GameVariables")->call("_getType");
 
     // get genetics node & generate population
-    get_node("/root/StudentGenetics")->call("set_population_size", 5);
+    // get_node("/root/StudentGenetics")->call("set_population_size", 5);
     get_node("/root/StudentGenetics")->call("generate_population");
     get_node("/root/StudentGenetics")->call("print_students");
+    get_node("/root/StudentGenetics")->call("calculate_fitness");
     
     get_tree()->change_scene(String("scenes/Game.tscn"));
     

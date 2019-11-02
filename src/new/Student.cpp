@@ -15,15 +15,51 @@ void Student::_register_methods() {
     register_method("getGunnerResistance", &Student::getGunnerResistance);
     register_method("getFireThrowingResistance", &Student::getFireThrowingResistance);
     register_method("getType", &Student::getType);
+    register_method("set_path", &Student::set_path);
+
 }
 
 void Student::_init() {}
 
-void Student::_ready() {}
+void Student::_ready() {
+    set_process(false);
+}
 
 void Student::_process(float delta) {
+    float move_distance = speed * delta;
+    move_along_path(move_distance);
+}
+
+void Student::set_path(PoolVector2Array pathA) {
+    path = pathA;
+    if (pathA.size() == 0) {
+        return;
+    }
+    set_process(true);
 
 }
+
+void Student::move_along_path(float distance) { 
+    Vector2 start_point = get_global_position();
+
+    for (int i = 1; i<path.size(); i++) {
+        float distance_to_next = start_point.distance_to(path[0]);
+
+        if (distance <= distance_to_next && distance >= 0.0) {
+            set_global_position(start_point.linear_interpolate(path[0], distance / distance_to_next));
+            break;
+        } else if (distance < 0.0) {
+            set_global_position(path[0]);
+            set_process(false);
+            break;
+        }
+        distance -= distance_to_next;
+        start_point = path[0];
+        path.remove(0);
+    }
+}
+
+
 
 Student::Student() {
     

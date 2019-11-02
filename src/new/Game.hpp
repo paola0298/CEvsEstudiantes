@@ -16,6 +16,7 @@
 #include <InputEventMouseButton.hpp>
 #include <Sprite.hpp>
 #include <GlobalConstants.hpp>
+#include <PoolArrays.hpp>
 
 #include <vector>
 #include "Student.hpp"

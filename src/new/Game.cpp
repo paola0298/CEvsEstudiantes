@@ -115,8 +115,6 @@ void Game::_ready() {
         Godot::print(String("Collective game"));
 
     navigation = (Navigation2D*)get_node("Navigation2D");
-    line = (Line2D*)get_node("Line2D");
-    mage = (KinematicBody2D*)get_node("Mage");
    
     enemy_ogre = ResourceLoader::get_singleton()->load("res://scenes/characters/Ogre.tscn");
     enemy_mercenary = ResourceLoader::get_singleton()->load("res://scenes/characters/Mercenary.tscn");
@@ -152,9 +150,17 @@ void Game::_process(float delta) {
                     enemy_node = (KinematicBody2D *) enemy_ogre->instance();
                     break;
             }
+
+            std::string name = "Enemie " + std::to_string(wave_enemies);
+
             enemy_node->set_z_index(5);
+            enemy_node->set_name(name.c_str());
             enemy_node->set_global_position(Vector2(1026, 606));
             add_child(enemy_node);
+            
+            PoolVector2Array vectorPath = navigation->get_simple_path(enemy_node->get_global_position(), Vector2(381, 195));
+            //charcater.path = vectorPath
+            get_node(name.c_str())->call("set_path", vectorPath);
             enemies_nodes.push_back(enemy_node);
             // enemies_classes.push_back(enemy);
             wave_enemies++;
