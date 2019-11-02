@@ -8,6 +8,8 @@ void Game::_register_methods() {
     register_method("_ready", &Game::_ready);
     register_method("_process", &Game::_process);
     // register_method("_unhandled_input", &Game::_unhandled_input);
+    register_method("_input", &Game::HandleInputEvent);
+    register_method("on_defense_pressed", &Game::HandleInputEvent);
 
     register_property<Game, bool>("gameType", &Game::gameType, "");
 }
@@ -17,6 +19,83 @@ Game::Game() { }
 Game::~Game() { }
 
 void Game::_init() { }
+
+void Game::on_defense_pressed() {
+    get_node("/root/GameVariables")->call("set_actual_defense_quit");
+
+}
+
+void Game::HandleInputEvent(InputEvent* event) {
+    const godot::String gsIEMB = "InputEventMouseButton";
+    godot::String gsClass = event->get_class();
+    if (gsClass == gsIEMB) {
+        ProcessClick((InputEventMouseButton*)event);
+    }
+
+}
+
+void Game::ProcessClick(InputEventMouseButton* e) {
+    int64_t buttonIndex = e->get_button_index();
+    if (e->is_pressed()) {
+        if (buttonIndex == GlobalConstants::BUTTON_RIGHT) {
+            Godot::print("Button left pressed");
+            Vector2 vector = e->get_global_position();
+            Godot::print("Click at");
+            Godot::print(std::to_string(vector.x).c_str());
+            Godot::print(std::to_string(vector.y).c_str());
+            // vector = vector + Vector2(600, 0);
+            // vector = c_to_i(vector);
+            // Vector2 position = e->get_position();
+            // Godot::print(std::to_string(vector.x).c_str());
+            // Godot::print(std::to_string(vector.y).c_str());
+            int defense = get_node("/root/GameVariables")->call("get_actual_defense");
+            Godot::print(std::to_string(defense).c_str());
+
+            Ref<PackedScene> defenser;
+
+            switch (defense) {
+            case 1: //Archer
+                defenser = ResourceLoader::get_singleton()->load("res://scenes/defenses/Archer.tscn");
+                break;
+            case 2: //Mage
+                defenser = ResourceLoader::get_singleton()->load("res://scenes/defenses/Mage.tscn");
+                break;
+            case 3: // Gunner
+                defenser = ResourceLoader::get_singleton()->load("res://scenes/defenses/Gunner.tscn");
+                break;
+            case 4: // Fire
+                defenser = ResourceLoader::get_singleton()->load("res://scenes/defenses/FireMage.tscn");
+                break;
+            }
+
+            Godot::print("Defenser set");
+
+            KinematicBody2D *defenseBody = (KinematicBody2D*)defenser->instance();
+            // defenseBody->set_position(position);
+            defenseBody->set_global_position(vector);
+            defenseBody->set_z_index(5);
+            add_child(defenseBody);
+
+        }
+
+        // if (buttonIndex == GlobalConstants::BUTTON_LEFT) {
+        //     Godot::print("Left pressed");
+        
+        // }
+    }
+
+}
+
+Vector2 Game::c_to_i(Vector2 cartesian) {
+    return Vector2(cartesian.x-cartesian.y, (cartesian.x+cartesian.y)/2);
+}
+Vector2 Game::i_to_c(Vector2 isometric) {
+    Vector2 pos = Vector2();
+    pos.x = (isometric.x+isometric.y*2)/2;
+    pos.y = -isometric.x + pos.x;
+
+    return pos;
+}
 
 // void Game::_unhandled_input(InputEvent *event) {
 //     // if (event->is_action_pressed("mouse_clicked")) {
@@ -42,24 +121,26 @@ void Game::_ready() {
 }
 
 void Game::_process(float delta) { 
-    Input *i = Input::get_singleton();
-    if (i->is_action_just_pressed("mouse_clicked")) {
-        Godot::print("Pressed");
-        Vector2 vec = mage->get_global_position();
-        float x = vec.x;
-        float y = vec.y;
-        Godot::print(std::to_string(x).c_str());
-        Godot::print(std::to_string(y).c_str());
-        // x 1125.410034
-        // y 446.295990
+    // Input *i = Input::get_singleton();
+    
+    // if (i->is_action_just_pressed("mouse_clicked")) {
+    //     Godot::print("Pressed");
+    //     Vector2 vec = mage->get_global_position();
+    //     float x = vec.x;
+    //     float y = vec.y;
+    //     Godot::print(std::to_string(x).c_str());
+    //     Godot::print(std::to_string(y).c_str());
+    //     // x 1125.410034
+    //     // y 446.295990
 
-        // f x 538.106995
-        // f y 345.984009
-        PoolVector2Array vector = navigation->get_simple_path(mage->get_global_position(), Vector2(538.106995, 345.984009));
-        line->set_points(vector);
+    //     // f x 538.106995
+    //     // f y 345.984009
+    //     PoolVector2Array vector = navigation->get_simple_path(mage->get_global_position(), Vector2(538.106995, 345.984009));
+    //     line->set_points(vector);
         
-    }
+    // }
 }
+
 
 
 
