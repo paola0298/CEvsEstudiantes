@@ -1,52 +1,62 @@
 #pragma once
 
-// #include <core/Godot.hpp>
-// #include <Node.hpp>
-// #include <string>
+#include <core/Godot.hpp>
+#include <KinematicBody2D.hpp>
+#include <string>
 
-// namespace godot {
-//     class Student: public Node {
-//         GODOT_CLASS(Student, Node);
+namespace godot {
 
-//         public:
-//             Student();
-//             ~Student();
+    /*
+    ogro:           0
+    mercenario:     1
+    arpía:          2
+    elfo oscuro:    3
+    */
+    class Student: public KinematicBody2D{
+        GODOT_CLASS(Student, KinematicBody2D);
 
-//             void _init();
-//             void _ready();
-        
-//         private:
-//             int life;
-//             int speed;
-//             int archer_r;
-//             int mage_r;
-//             int firemage_r;
-//             int gunner_r;
-//             std::string type;
-//     };
-// }
+        private:
+            float life;
+            float base_life;
+            float speed;
+            float archerResistance;
+            float resistanceToWizards;
+            float gunnerResistance;
+            float fireThrowingResistance;
+            int type;
+            //Genetics related variables
+            double fitness_score;
+            float chromosome[6] = {0.0};
 
-class Student {
-    private:
-        int life;
-        int speed;
-        int archerResistance;
-        int resistanceToWizards;
-        int gunnerResistance;
-        int fireThrowingResistance;
-        int type;
+        public: 
+            Student();
+            Student(float life, float speed, float a_r, float m_r, float g_r, float fm_r, int type);
+            ~Student();
 
-    public: 
-        Student(int life, int speed, int a_r, int m_r, int g_r, int fm_r, int type);
-        ~Student();
+            //Godot methods
+            void _init();
+            void _ready();
+            void _process(float delta);
+            static void _register_methods();
 
-        int getLife();
-        void setLife(int newLife);
-        void decreaseLife(int toDecrease, int type);
-        int getSpeed();
-        int getArcherResistance();
-        int getResistanceToWizards();
-        int getGunnerResistance();
-        int getFireThrowingResistance();
-        int getType();
-};
+            float getLife();
+            float get_base_life();
+            void setLife(float newLife);
+            void decreaseLife(float toDecrease, int defense_type);
+            void setSpeed(float newSpeed);
+            float getSpeed();
+            float getArcherResistance();
+            void setArcherResistance(float resistance);
+            float getResistanceToWizards();
+            void setMageResistance(float resistance);
+            float getGunnerResistance();
+            void setGunnerResistance(float resistance);
+            float getFireThrowingResistance();
+            void setFireMageResistance(float resistance);
+            int getType();
+            //Genetics related methods
+            void set_fitness_score(float score);
+            float get_fitness_score();
+            float * get_chromosome();
+    };
+}
