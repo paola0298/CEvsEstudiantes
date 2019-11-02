@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GameVariables="*res://GameVariables.gdns"
+StudentGenetics="*res://StudentGenetics.gdns"
 
 [display]
 
