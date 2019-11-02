@@ -3,9 +3,7 @@
 [ext_resource path="res://scenes/Base_character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://img/characters/elf.png" type="Texture" id=2]
 
-
-[node name="Elf" index="0" instance=ExtResource( 1 )]
+[node name="Elf" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
-expand = true
