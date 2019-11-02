@@ -27,3 +27,4 @@ bool GameVariables::_getType() {
     Godot::print(String("Getting type"));
     return gameType;
 }
+

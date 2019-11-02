@@ -16,8 +16,8 @@ MainMenu::~MainMenu() { }
 void MainMenu::_init() { }
 
 void MainMenu::_on_Individual_pressed() {
-    get_tree()->change_scene(String("scenes/Game.tscn"));
     get_node("/root/GameVariables")->call("_setType", true);
+    get_tree()->change_scene(String("scenes/Game.tscn"));
     //  bool responde = get_node("/root/GameVariables")->call("_getType");
     
     // if (responde) 
@@ -25,8 +25,8 @@ void MainMenu::_on_Individual_pressed() {
 }
 
 void MainMenu::_on_Collective_pressed() {
-    get_tree()->change_scene(String("scenes/Game.tscn"));
     get_node("/root/GameVariables")->call("_setType", false);
+    get_tree()->change_scene(String("scenes/Game.tscn"));
     // bool responde = get_node("/root/GameVariables")->call("_getType");
     
     // if (!responde) 
