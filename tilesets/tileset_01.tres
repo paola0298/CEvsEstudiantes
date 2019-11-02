@@ -8,6 +8,7 @@
 [ext_resource path="res://img/tiles/cityTiles_017.png" type="Texture" id=6]
 
 [sub_resource type="NavigationPolygon" id=3]
+<<<<<<< HEAD
 vertices = PoolVector2Array( 66.0497, 65.5846, 131, 33.9553, 65.5846, 0.930695, 1.02873, 33.2738 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ) ]
 
@@ -16,6 +17,16 @@ vertices = PoolVector2Array( 0.187557, 33.3672, 65.8926, 0.374486, 131, 33.3672,
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ) ]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
+=======
+vertices = PoolVector2Array( 0, 33.9553, 65.8172, 0.930695, 131, 33.7228, 66.0497, 67.2126 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=4]
+vertices = PoolVector2Array( 65.352, 0, 131, 33.2576, 65.8172, 66.5149, 0, 33.2576 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+>>>>>>> origin/genetic_algorithm
 points = PoolVector2Array( 777.781, 635.25, 682.781, 685.25, 630.781, 656.25, 386.781, 780.25, 158.187, 634.25, 506.672, 473.232 )
 
 [sub_resource type="StreamTexture" id=2]
@@ -56,7 +67,7 @@ flags = 4
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 1 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 1

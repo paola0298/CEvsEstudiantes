@@ -2,6 +2,8 @@
 #include "GameVariables.hpp"
 #include "Game.hpp"
 #include "GuiManagement.hpp"
+#include "Student.hpp"
+#include "genetic.hpp"
 
 extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options *o) {
     godot::Godot::gdnative_init(o);
@@ -17,4 +19,6 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle) {
     godot::register_class<godot::GameVariables>();
     godot::register_class<godot::Game>();
     godot::register_class<godot::GuiManagement>();
+    godot::register_class<godot::Student>();
+    godot::register_class<godot::StudentGenetics>();
 }

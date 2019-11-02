@@ -17,13 +17,30 @@
 #include <Sprite.hpp>
 #include <GlobalConstants.hpp>
 
+#include <vector>
+#include "Student.hpp"
+
 namespace godot {
     class Game : public Node2D {
         GODOT_CLASS(Game, Node2D);
 
+        private:
+            bool gameType;
+            int matrix[10][10];
+
+            float time_var;
+            int wave_enemies = 0;
+            std::vector<KinematicBody2D *> enemies_nodes;
+            std::vector<Student *> enemies_classes;
+
+            //Scenes to instance
+            Ref<PackedScene> enemy_ogre;
+            Ref<PackedScene> enemy_mercenary;
+            Ref<PackedScene> enemy_harpy;
+            Ref<PackedScene> enemy_dark_elf;
+
         public:
             static void _register_methods();
-
             Game();
             ~Game();
 
@@ -40,10 +57,6 @@ namespace godot {
             Vector2 c_to_i(Vector2 cartesian);
             Vector2 i_to_c(Vector2 isometric);
             void on_defense_pressed();
-
-        private:
-            bool gameType;
             
     };
-
 }

@@ -9,3 +9,6 @@
 margin_left = -62.0
 margin_right = 63.0
 texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" parent="Detection" index="0"]
+polygon = PoolVector2Array( 27.063, 125.652, -218.146, 3.90463, 27.9205, -116.985, 271.415, 3.04727 )
