@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Game.gdns" type="Script" id=1]
 [ext_resource path="res://tilesets/tileset_01.tres" type="TileSet" id=2]
 [ext_resource path="res://scenes/Overlay.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/defenses/Mage.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/defenses/ArcherDef.tscn" type="PackedScene" id=5]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -29,3 +30,9 @@ position = Vector2( 1125.41, 446.296 )
 
 [node name="Line2D" type="Line2D" parent="."]
 texture_mode = -1111170616
+
+[node name="ArcherDef" parent="." instance=ExtResource( 5 )]
+margin_left = 767.457
+margin_top = 427.416
+margin_right = 892.457
+margin_bottom = 577.416
