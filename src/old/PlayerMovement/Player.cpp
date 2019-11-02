@@ -31,6 +31,7 @@ Vector2 Player::isometric_to_cartesian(Vector2 isometric) {
 void Player::_process(float delta) {
     UpdateMotionFromInput(delta);
 	move_and_slide(motion);
+    
 }
 
 void Player::UpdateMotionFromInput(float delta) {
